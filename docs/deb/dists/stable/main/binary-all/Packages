@@ -1,0 +1,21 @@
+Package: nautilus-all-folder-size-calculation
+Version: 1.0
+Architecture: all
+Maintainer: ismdevteam <support@appism.ru>
+Depends: python3, python3-gi, nautilus, gir1.2-nautilus-3.0
+Filename: pool/main/n/nautilus-all-folder-size-calculation/nautilus-all-folder-size-calculation_1.0_all.deb
+Size: 5232
+MD5sum: 3ee96bd7c124926cb658d02964a8dfb7
+SHA1: 4828a207b9db2e1d33c09961b9250cd99c978a08
+SHA256: 7eb8c3557c555dede41d5a1308dc399e6c6cda347baf424ec5e8bf2ed20f3388
+Section: gnome
+Priority: optional
+Homepage: https://github.com/ismdevteam/nautilus-all-folder-size-calculation
+Description: Nautilus extension that displays accurate folder sizes with smart caching
+ This Nautilus extension adds accurate folder size calculation with smart caching.
+ Features include:
+  * Real-time size calculation
+  * Automatic cache invalidation
+  * Low memory footprint
+  * Native integration with Nautilus file manager
+

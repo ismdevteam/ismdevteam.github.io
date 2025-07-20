@@ -1,0 +1,15 @@
+Origin: ismdevteam.github.io
+Label: ismdevteam.github.io
+Suite: stable
+Codename: stable
+Version: 1.0
+Architectures: all
+Components: main
+Description: Custom repository for nautilus-all-folder-size-calculation
+Date: Sun, 20 Jul 2025 15:12:04 +0000
+MD5Sum:
+ 9218477314af88cea50773abad32d1d3 900 main/binary-all/Packages
+ 9df9b47289a8d66343a5d7a9553ad822 522 main/binary-all/Packages.gz
+SHA256:
+ 2ee8524e269d500768ef7f4c8ad3f7b98cdd533c65d9768492a736a267e41ecc 900 main/binary-all/Packages
+ 1d81b9660968ed8b382ea1588e4f54ed81c1bff827fbe7c6381f7a2ff5bd8e47 522 main/binary-all/Packages.gz
