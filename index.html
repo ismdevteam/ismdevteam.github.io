@@ -178,6 +178,40 @@
     </div>
 
     <div class="news-block" style="font-size: 0.7rem;">
+        <h2 class="news-title">New Developer Tool: chmodx - Intuitive File Permission Management</h2>
+        <div class="news-content">
+            <p>We're excited to introduce <strong>chmodx</strong>, a powerful yet intuitive command-line tool for managing file permissions using the familiar 10-character mode string format seen in <code>ls -l</code> output.</p>
+            
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Set permissions using intuitive strings like <code>-rwxr-x---</code> or <code>drwxr-x---</code></li>
+                <li>File type safety - validates targets match specified type (file vs directory)</li>
+                <li>Verbose mode shows confirmation and equivalent chmod commands</li>
+                <li>Robust error checking with clear error messages</li>
+                <li>Pure POSIX shell compatibility - works on any Unix-like system</li>
+            </ul>
+            
+            <p><strong>Usage Examples:</strong></p>
+            <pre style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 15px 0;">
+    # Set file permissions to rwxr-x--- (user: RWX, group: RX, other: none)
+    chmodx -rwxr-x--- my_script.sh
+
+    # Set directory permissions to rwxr-xr-x with verbose output
+    chmodx --verbose drwxr-xr-x my_directory/</pre>
+
+            <p><strong>Installation:</strong></p>
+            <pre style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 15px 0;">
+    # Download and make executable
+    curl -O https://raw.githubusercontent.com/ismdevteam/chmodx/main/chmodx
+    chmod +x chmodx
+    sudo mv chmodx /usr/local/bin/</pre>
+
+            <p>Perfect for developers and system administrators who prefer the intuitive permission string format over traditional chmod syntax!</p>
+            <a href="https://github.com/ismdevteam/chmodx" class="news-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+    </div>
+
+    <div class="news-block" style="font-size: 0.7rem;">
         <h2 class="news-title">New Release: Nautilus All Folder Size Calculation Extension (July 2025)</h2>
         <div class="news-content">
             <p>We're proud to announce our latest developer tool - the <strong>Nautilus All Folder Size Calculation Extension</strong> for Linux systems!</p>
@@ -218,11 +252,12 @@ sudo reboot</pre>
 echo "deb [trusted=yes arch=all] https://ismdevteam.github.io/deb stable main" | sudo tee /etc/apt/sources.list.d/nautilus-ext.list
 sudo apt update
 sudo apt install nautilus-all-folder-size-calculation
-sudo reboot</pre>
+sudo reboot
+</pre>
                 </div>
             </div>
             
-            <p>After installation, simply restart Nautilus and you'll see folder sizes in the "Size (Mb)" column. The extension automatically caches results and only recalculates when folders change for optimal performance.</p>
+            <p>After installation, simply restart Nautilus and you'll see folder sizes in the Size column. The extension automatically caches results and only recalculates when folders change for optimal performance.</p>
             
             <p>Perfect for developers and power users who need quick visibility into folder sizes without running manual disk usage commands!</p>
             <a href="https://github.com/ismdevteam/nautilus-all-folder-size-calculation" class="news-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
