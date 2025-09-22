@@ -178,6 +178,64 @@
     </div>
 
     <div class="news-block" style="font-size: 0.7rem;">
+        <h2 class="news-title">New Libtorrent Feature: Fileless Torrent Operation with Piece Cache</h2>
+        <div class="news-content">
+            <p>We're excited to introduce a <strong>major enhancement to libtorrent</strong> - fileless torrent operation using piece-based caching, allowing seeding without creating original content files on disk.</p>
+            
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li><strong>Fileless Operation (-Z mode)</strong> - Seed torrents without creating original content files</li>
+                <li><strong>Piece-based Caching</strong> - Store individual pieces in cache directory instead of complete files</li>
+                <li><strong>Resume Support</strong> - Maintain resume data in dedicated cache directory</li>
+                <li><strong>Backward Compatible</strong> - Works alongside traditional file storage</li>
+                <li><strong>Disk Space Efficient</strong> - Store only cached pieces, not entire files</li>
+                <li><strong>Enhanced Privacy</strong> - No original content files created on disk</li>
+            </ul>
+            
+            <p><strong>Usage Examples:</strong></p>
+            <pre style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 15px 0;">
+    # Fileless mode with torrent file
+    ./client_test_piece_cache -Z -s /tmp/save_path torrent_file.torrent
+
+    # Fileless mode with magnet link
+    ./client_test_piece_cache -Z -s /tmp/save_path "magnet:?xt=urn:btih:..."
+
+    # Cache pieces during download
+    ./client_test_piece_cache -Z -C -s /tmp/save_path torrent_file.torrent
+
+    # Custom cache directory
+    ./client_test_piece_cache -Z --cache_root=/my/cache -s /tmp/save_path torrent.torrent</pre>
+
+            <p><strong>Installation & Building:</strong></p>
+            <pre style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 15px 0;">
+    # Clone our enhanced libtorrent fork
+    git clone -b piece-cache-feature https://github.com/ismdevteam/libtorrent.git
+    cd libtorrent
+    
+    # Build the piece cache client
+    mkdir build && cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    cmake --build . --target client_test_piece_cache</pre>
+
+            <p><strong>How It Works:</strong></p>
+            <p>The piece cache intercepts torrent piece downloads and stores them in a structured cache directory instead of creating original content files. This enables seeding functionality while maintaining disk space efficiency and privacy.</p>
+            
+            <pre style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 15px 0;">
+cache_root/
+├── [info_hash]/
+│   ├── metadata.txt
+│   ├── piece_000001.dat
+│   └── piece_000002.dat
+└── .resume/
+    └── [info_hash].resume</pre>
+
+            <p>Perfect for seedbox operators, privacy-conscious users, and anyone who wants to seed torrents without storing complete files on disk!</p>
+            <p><strong>Compatibility:</strong> Tested and verified with libtorrent 2.0.11+</p>
+            <a href="https://github.com/ismdevteam/libtorrent/tree/piece-cache-feature" class="news-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+    </div>
+
+    <div class="news-block" style="font-size: 0.7rem;">
         <h2 class="news-title">New Developer Tool: chmodx - Intuitive File Permission Management</h2>
         <div class="news-content">
             <p>We're excited to introduce <strong>chmodx</strong>, a powerful yet intuitive command-line tool for managing file permissions using the familiar 10-character mode string format seen in <code>ls -l</code> output.</p>
